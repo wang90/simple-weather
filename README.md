@@ -6,6 +6,13 @@
 #### taro app   
 https://taro-docs.jd.com/taro/docs/GETTING-STARTED 
 
+#### 数据来源
+
+##### 彩云天气免费API
+##### https://dashboard.caiyunapp.com
+
+api : https://api.caiyunapp.com/v2.5/{Token}/{经度, 纬度}/realtime.json
+
 ### 使用
 ``````
 # yarn
@@ -21,3 +28,5 @@ $ taro build --type weapp
 $ npx taro build --type weapp --watch
 $ npx taro build --type weapp
 ``````
+
+
