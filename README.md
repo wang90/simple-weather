@@ -1,16 +1,15 @@
-# jan 天气
+# simple 天气
+-  一款简单的天气小程序软件
+-  一款多端小程序应用
+-  一款个人开发产品
 
-一款简单的天气小程序软件
+### 工具
+#### taro app
+https://taro-docs.jd.com/taro/docs/GETTING-STARTED
+### vue3.0 + ts
 
-
-#### taro app   
-https://taro-docs.jd.com/taro/docs/GETTING-STARTED 
-
-#### 数据来源
-
-##### 彩云天气免费API
-##### https://dashboard.caiyunapp.com
-
+### 数据来源
+#### [彩云天气免费API](https://dashboard.caiyunapp.com)
 api : https://api.caiyunapp.com/v2.5/{Token}/{经度, 纬度}/realtime.json
 
 ### 使用
