@@ -1,13 +1,13 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "jan-weather",
+  "projectname": "simple-weather",
   "description": "",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,
-    "es6": false,
+    "es6": true,
     "postcss": false,
-    "minified": false
+    "minified": true
   },
   "compileType": "miniprogram"
 }
