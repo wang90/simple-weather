@@ -1,13 +1,13 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "smip-weather",
+  "projectname": "simple-weather",
   "description": "simple-weather",
-  "appid": "touristappid",
+  "appid": "wx96245c8e611ba76e",
   "setting": {
     "urlCheck": true,
-    "es6": false,
+    "es6": true,
     "postcss": false,
-    "minified": false
+    "minified": true
   },
   "compileType": "miniprogram"
 }

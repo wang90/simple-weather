@@ -1,0 +1,55 @@
+
+@import "../../config.less";
+.weather {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: @White;
+  padding: 15% 5% 5%;
+  box-sizing: border-box;
+}
+.header{
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  .province{
+    text-align: left;
+    font-size:35px;
+  }
+}
+.weather-info{
+  text-align: center;
+  flex:1;
+  min-height:0;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .weather-compontent {
+    .title {
+      font-size:50px;
+    }
+    .address {
+      font-size:30px;
+    }
+  }
+  .weather-temp {
+    font-size:80px;
+    position: relative;
+    &::after{
+      position: absolute;
+      content: "";
+      right: -15px;
+      top: 0 ;
+      width:15px;
+      height:15px;
+      border:5px solid @White;
+      border-radius:50%;
+    }
+  }
+}
+
+.data-source {
+  font-size:20px;
+}

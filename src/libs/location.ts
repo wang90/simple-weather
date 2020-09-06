@@ -1,0 +1,2 @@
+import Taro from 'taro';
+

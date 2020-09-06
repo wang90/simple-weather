@@ -1,3 +1,6 @@
+
+const path = require('path');
+
 const config = {
   projectName: 'smip-weather',
   date: '2020-9-6',
@@ -59,6 +62,15 @@ const config = {
         }
       }
     }
+  },
+  alias: {
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/libs': path.resolve(__dirname, '..', 'src/libs'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+    '@/package': path.resolve(__dirname, '..', 'package.json'),
+    '@/project': path.resolve(__dirname, '..', 'project.config.json'),
+    '@/api': path.resolve(__dirname, '..', 'src/api'),
+    '@/config': path.resolve(__dirname, '..', 'src/config'),
   }
 }
 
