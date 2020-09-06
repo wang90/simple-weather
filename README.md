@@ -28,4 +28,5 @@ $ npx taro build --type weapp --watch
 $ npx taro build --type weapp
 ``````
 
-
+### 小程序
+![code](./logo/wx-app-code.jpg)
