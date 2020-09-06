@@ -1,12 +1,12 @@
 # simple 天气
-👽一款简单的天气小程序软件  
-👽一款多端小程序应用  
-👽一款个人开发产品  
+👽 一款简单的天气小程序软件  
+👽 一款多端小程序应用  
+👽 一款个人开发产品  
 
 ### 工具
 #### taro app
 https://taro-docs.jd.com/taro/docs/GETTING-STARTED
-### vue2.0 + ts
+### vue 2.0 + ts
 
 ### 数据来源
 #### [彩云天气免费API](https://dashboard.caiyunapp.com)
