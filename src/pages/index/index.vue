@@ -27,16 +27,24 @@
 <script>
 import { ref } from 'vue'
 import weather from "@/components/weather/index"
+// import { getWeather } from "@/api/index.ts"
+import axios from "axios"
+import { getHttpUrl } from "@/api/index.ts"
 
 export default {
   components: {
     weather
   },
   setup () {
-    const msg = ref('Hello world')
+    const msg = ref('Hello world');
+    const getWeather = await axios.get(getHttpUrl())
+    console.log(getWeather)
     return {
       msg
     }
+  },
+  getWeather() {
+      console.log("weather")
   }
 }
 </script>
