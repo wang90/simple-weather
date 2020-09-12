@@ -21,6 +21,9 @@
 import WeatherIcon from "@/components/weather-icon/index";
 import { getWeather , getLocation , getLocationName } from "@/api/index.ts";
 import SKY  from "@/config/skyicon.ts";
+import Config from '@/config/index.ts';
+
+const shareTitle = Config.shareTitle;
 
 export default {
   name:"Home",
@@ -30,7 +33,7 @@ export default {
   data () {
     return {
       temp: '..',
-      source: '数据来源:彩云天气',
+      source: '数据来源: 彩云天气',
       district: '获取定位中...',
       weather: '获取数据',
       type:'',
@@ -39,14 +42,14 @@ export default {
   },
   created() {
     console.log("created");
-    getLocation().then(res=>{
+    getLocation().then( res => {
       this.getWeather(res.lonlant);
     })
 
   },
   methods: {
     getWeather(lonlat) {
-      getWeather(lonlat).then(res=> {
+      getWeather(lonlat).then( res => {
         console.log(res);
         if (res.status === 'ok') {
           const result = res.result || {};
@@ -64,25 +67,44 @@ export default {
       }).catch(err=>{
         console.log(err);
       })
-      getLocationName(lonlat).then(res=>{
-        console.log(res)
+      getLocationName(lonlat).then(res => {
         if (res.status === "1") {
           const regeocode = res.regeocode || {};
-          const addressComponent = regeocode.addressComponent || {};
-          const province = addressComponent.province;
-          const district = addressComponent.district;
 
-          if (regeocode) {
+          if ( regeocode ) {
+            const addressComponent = regeocode.addressComponent || {};
+            const province = addressComponent.province;
+            const district = addressComponent.district;
             this.district = district;
             this.province = province
           }else {
             this.district = '未知地域';
-            this.province = province
+            this.province = '';
           }
         }
-      }).catch(()=>{
-
+      }).catch( () => {
+          this.district = '未知区域';
+          this.province = ''
       })
+    },
+
+  },
+  onShareAppMessage () {
+    return {
+      title: shareTitle,
+      path:'/pages/index/index'
+    }
+  },
+  onShareTimeline () {
+    return {
+      title: shareTitle,
+      path:'/pages/index/index?add=share'
+    }
+  },
+  onAddToFavorites(){
+    return {
+      title: shareTitle,
+      query: '',
     }
   }
 }
