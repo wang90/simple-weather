@@ -30,3 +30,9 @@ $ npx taro build --type weapp
 
 ### 小程序
 ![code](./logo/wx-app-code.jpg)
+
+### 更新日志
+- v0.1.0 2020-09-07
+  - 查询打开时经纬度
+  - 查询经度下的天气
+  - 天气 icon 动画
