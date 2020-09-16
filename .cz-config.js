@@ -13,7 +13,7 @@ module.exports = {
     { value: "回滚", name: "回滚:    代码回退" }
   ],
 
-  scopes: [{ name: "" }],
+  scopes: [{ name: "更新 README.md" }, { name: "代码格式优化" }],
 
   // it needs to match the value for field type. Eg.: 'fix'
   /*
