@@ -1,13 +1,22 @@
+@import "./config.less";
 Page {
   width: 100%;
   height:100%;
+  overflow-y: hidden;
 }
-.content{
+.content {
   width: 100%;
   height:100%;
-  background: #121212;
+  background: @White;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+@media (prefers-color-scheme: dark ) {
+  .content {
+    background: @Black;
+  }
+}
+

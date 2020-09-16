@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  color: @White;
+  color: @Black;
   padding: 15% 5% 5%;
   box-sizing: border-box;
 }
@@ -44,7 +44,7 @@
       top: 0 ;
       width:15px;
       height:15px;
-      border:5px solid @White;
+      border:5px solid @Black;
       border-radius:50%;
     }
   }
@@ -53,3 +53,21 @@
 .data-source {
   font-size:20px;
 }
+
+
+@media (prefers-color-scheme: dark) {
+  .weather {
+    color: @White;
+  }
+
+  .weather-info{
+    .weather-temp {
+      font-size:80px;
+      position: relative;
+      &::after{
+        border-color: @White;
+      }
+    }
+  }
+}
+

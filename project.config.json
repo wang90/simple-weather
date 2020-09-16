@@ -1,13 +1,36 @@
 {
-  "miniprogramRoot": "./dist",
-  "projectname": "simple-weather",
+  "miniprogramRoot": "dist/",
+  "projectname": "simple_weather",
   "description": "simple-weather",
   "appid": "wx96245c8e611ba76e",
   "setting": {
     "urlCheck": true,
     "es6": true,
     "postcss": false,
-    "minified": true
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "useMultiFrameRuntime": true,
+    "useApiHook": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
   },
-  "compileType": "miniprogram"
+  "compileType": "miniprogram",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {}
 }

@@ -39,6 +39,7 @@
     "@tarojs/components": "3.0.8",
     "@tarojs/runtime": "3.0.8",
     "@tarojs/taro": "3.0.8",
+    "@tarojs/taro-weapp": "^2.2.10",
     "axios": "^0.20.0",
     "vue": "^2.5.0",
     "vue-template-compiler": "^2.5.0"
