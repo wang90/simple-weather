@@ -2,11 +2,11 @@
 import config from "@/config/index.ts";
 import Taro from "@tarojs/taro"
 
-export function getWeather(lonlant= config.lonlant) {
+export function getWeather(lonlant:string = config.lonlant) {
   return new Promise((resolve, reject) => {
     Taro.request({
       // url: `https://api.caiyunapp.com/v2/${config.token}/${lonlant}/realtime.json`, //仅为示例，并非真实的接口地址
-      url : "https://api.caiyunapp.com/v2.5/Y2FpeXVuX25vdGlmeQ==/116.34854709999999,39.998374/forecast?dailysteps=15&alert=true&_=1599376146301",
+      url : `https://api.caiyunapp.com/v2.5/Y2FpeXVuX25vdGlmeQ==/${lonlant}/forecast?dailysteps=15&alert=true&_=1599376146301`,
       success:  (res)=> {
         resolve(res.data)
       },
@@ -23,9 +23,9 @@ export function getLocation  () {
     Taro.getLocation({
       type: 'wgs84',
       success:  (res) => {
-        const latitude = res.latitude
-        const longitude = res.longitude
-        const lonlant  = latitude && longitude ? `${longitude},${latitude}` : config.lonlant
+        const latitude = res.latitude;
+        const longitude = res.longitude;
+        const lonlant  = latitude && longitude ? `${longitude},${latitude}` : config.lonlant;
         resolve({lonlant})
       },
       fail: () => {
@@ -36,7 +36,7 @@ export function getLocation  () {
 
 }
 
-export function getLocationName(location) {
+export function getLocationName(location: string) {
   return new Promise((resolve, reject) => {
     Taro.request({
       url : `https://restapi.amap.com/v3/geocode/regeo?key=127caacaa204cc855a9bcdbc8ca06a49&location=${location}&_=1599376146303`,
