@@ -1,10 +1,10 @@
 # simple 天气
-👽 一款简单的天气小程序软件  
-👽 一款多端小程序应用  
-👽 一款个人开发产品  
+👽 &nbsp;&nbsp;&nbsp;&nbsp;一款简单的天气小程序软件  
+👽 &nbsp;&nbsp;&nbsp;&nbsp;一款多端小程序应用  
+👽 &nbsp;&nbsp;&nbsp;&nbsp;一款个人开发产品  
 
-### 工具
-#### taro app
+### 应用
+#### taro
 https://taro-docs.jd.com/taro/docs/GETTING-STARTED
 ### vue 2.0 + ts
 
