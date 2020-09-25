@@ -1,7 +1,7 @@
 <template>
   <view class="content weather">
     <view class="header">
-      <view class="province">{{province}}</view>
+      <view class="province" @tap = "chooseAddress">{{province}}</view>
     </view>
     <view class="weather-info">
       <view class="weather-compontent">
@@ -19,7 +19,7 @@
 </style>
 <script>
 import WeatherIcon from "@/components/weather-icon/index";
-import { getWeather , getLocation , getLocationName } from "@/api/index.ts";
+import { getWeather , getLocation , getLocationName , chooseLocation} from "@/api/index.ts";
 import SKY  from "@/config/skyicon.ts";
 import Config from '@/config/index.ts';
 
@@ -87,7 +87,17 @@ export default {
           this.province = ''
       })
     },
-
+    chooseAddress() {
+      // 切换地址
+      console.log("切换地址")
+      chooseLocation().then(res=>{
+        if(res && res.longitude && res.latitude) {
+          this.getWeather(`${res.longitude},${res.latitude}`);
+        }
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
   },
   onShareAppMessage () {
     return {

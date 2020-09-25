@@ -17,6 +17,36 @@ export function getWeather(lonlant:string = config.lonlant) {
   });
 }
 
+export function chooseLocation() {
+  return new Promise((resolve, reject) => {
+    Taro.showLoading({
+      title: '加载中',
+    })
+    Taro.chooseLocation({
+      success:  (res)=> {
+        console.log(res);
+        if(res && res.longitude && res.latitude) {
+          Taro.showToast({
+            title: '更新成功',
+            icon: 'success',
+            duration: 2000
+          })
+          resolve(res);
+        }else {
+          Taro.showToast({
+            title: '获取失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      },
+      complete:(res) =>{
+        Taro.hideLoading();
+      },
+    })
+  });
+}
+
 
 export function getLocation  () {
   return new Promise((resolve, reject) => {
