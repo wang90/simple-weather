@@ -21,86 +21,86 @@
 // 大风	WIND
 
 
-  // sunny cloudy fog rainy rainbow starry stormy snowy
+// sunny cloudy fog rainy rainbow starry stormy snowy
 module.exports = {
   CLEAR_DAY : {
-    type:'sunny',
-    value:'晴'
+    type: 'sunny',
+    value: '晴'
   },
   CLEAR_NIGHT: {
-    type:'starry',
-    value:'晴'
+    type: 'starry',
+    value: '晴'
   },
   PARTLY_CLOUDY_DAY: {
-    type:'cloudy',
-    value:'多云'
+    type: 'cloudy',
+    value: '多云'
   },
   PARTLY_CLOUDY_NIGHT: {
-    type:'cloudy',
-    value:'多云'
+    type: 'cloudy',
+    value: '多云'
   },
   CLOUDY:{
-    type:'cloudy',
-    value:'多云'
+    type: 'cloudy',
+    value: '多云'
   },
-  LIGHT_HAZE:{
+  LIGHT_HAZE: {
     type: 'fog',
-    value:'轻度雾霾'
+    value: '轻度雾霾'
   },
-  MODERATE_HAZE:{
-    type:'fog',
-    value:'中度雾霾'
+  MODERATE_HAZE: {
+    type: 'fog',
+    value: '中度雾霾'
   },
-  HEAVY_HAZE:{
-    type:'fog',
-    value:'重度雾霾'
+  HEAVY_HAZE: {
+    type: 'fog',
+    value: '重度雾霾'
   },
-  LIGHT_RAIN:{
+  LIGHT_RAIN: {
     type: 'rainy',
-    value:'小雨'
+    value: '小雨'
   },
-  MODERATE_RAIN:{
-    type:'rainy',
-    value:'中雨'
+  MODERATE_RAIN: {
+    type: 'rainy',
+    value: '中雨'
   },
-  HEAVY_RAIN:{
-    type:'rainy',
-    value:'大雨'
+  HEAVY_RAIN: {
+    type: 'rainy',
+    value: '大雨'
   },
-  STORM_RAIN:{
-    type:'rainy',
-    value:'暴雨'
+  STORM_RAIN: {
+    type: 'rainy',
+    value: '暴雨'
   },
-  FOG:{
-    type:'fog',
-    value:'雾'
+  FOG: {
+    type: 'fog',
+    value: '雾'
   },
-  LIGHT_SNOW:{
-    type:'snowy',
-    value:'小雪'
+  LIGHT_SNOW: {
+    type: 'snowy',
+    value: '小雪'
   },
-  MODERATE_SNOW:{
-    type:'snowy',
-    value:'中雪'
+  MODERATE_SNOW: {
+    type: 'snowy',
+    value: '中雪'
   },
-  HEAVY_SNOW:{
-    type:'snowy',
-    value:'大雪'
+  HEAVY_SNOW: {
+    type: 'snowy',
+    value: '大雪'
   },
-  STORM_SNOW:{
-    type:'snowy',
-    value:'暴雪'
+  STORM_SNOW: {
+    type: 'snowy',
+    value: '暴雪'
   },
-  DUST:{
-    type:'fog',
-    value:'浮沉'
+  DUST: {
+    type: 'fog',
+    value: '浮沉'
   },
-  SAND:{
-    type:'fog',
-    value:'沙尘'
+  SAND: {
+    type: 'fog',
+    value: '沙尘'
   },
-  WIND:{
-    type:'sunny',
-    value:'大风'
+  WIND: {
+    type: 'sunny',
+    value: '大风'
   }
 }

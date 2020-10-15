@@ -19,38 +19,42 @@
 </style>
 <script>
 import WeatherIcon from "@/components/weather-icon/index";
-import { getWeather , getLocation , getLocationName , chooseLocation} from "@/api/index.ts";
+import { getWeather , getLocation , getLocationName , chooseLocation } from "@/api/index.ts";
 import SKY  from "@/config/skyicon.ts";
 import Config from '@/config/index.ts';
 
 const shareTitle = Config.shareTitle;
 
 export default {
-  name:"Home",
-  components:{
-   WeatherIcon,
+
+  name: 'Home',
+  components: {
+    WeatherIcon,
   },
+
   data () {
     return {
       temp: '..',
       source: '数据来源: 彩云天气',
       district: '获取定位中...',
       weather: '获取数据',
-      type:'',
+      type: '',
       province: '',
     }
   },
+
   created() {
     console.log("created");
     getLocation().then( res => {
-      this.getWeather(res.lonlant);
+      this.getWeather( res.lonlant );
     })
 
   },
   methods: {
-    getWeather(lonlat) {
+
+    getWeather( lonlat ) {
+
       getWeather(lonlat).then( res => {
-        console.log(res);
         if (res.status === 'ok') {
           const result = res.result || {};
           const hourlys = result.hourly || {};
@@ -64,11 +68,12 @@ export default {
             this.temp  = Math.floor(temps[0].value);
           }
         }
-      }).catch(err=>{
+      }).catch( err => {
         console.log(err);
       })
-      getLocationName(lonlat).then(res => {
-        if (res.status === "1") {
+
+      getLocationName( lonlat ).then( res => {
+        if ( res.status === "1" ) {
           const regeocode = res.regeocode || {};
 
           if ( regeocode ) {
@@ -87,31 +92,36 @@ export default {
           this.province = ''
       })
     },
+
     chooseAddress() {
       // 切换地址
-      console.log("切换地址")
-      chooseLocation().then(res=>{
-        if(res && res.longitude && res.latitude) {
+      console.log("切换地址");
+
+      chooseLocation().then( res => {
+        if ( res && res.longitude && res.latitude ) {
           this.getWeather(`${res.longitude},${res.latitude}`);
         }
-      }).catch(err=>{
+      }).catch( err => {
         console.log(err);
       })
     }
   },
-  onShareAppMessage () {
+
+  onShareAppMessage() {
     return {
       title: shareTitle,
       path:'/pages/index/index'
     }
   },
-  onShareTimeline () {
+
+  onShareTimeline() {
     return {
       title: shareTitle,
       path:'/pages/index/index?add=share'
     }
   },
-  onAddToFavorites(){
+
+  onAddToFavorites() {
     return {
       title: shareTitle,
       query: '',

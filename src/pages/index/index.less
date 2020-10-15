@@ -1,5 +1,6 @@
 
 @import "../../config.less";
+
 .weather {
   display:flex;
   flex-direction: column;
@@ -9,16 +10,19 @@
   padding: 15% 5% 5%;
   box-sizing: border-box;
 }
+
 .header{
   display:flex;
   justify-content: space-between;
   width: 100%;
-  .province{
+
+  .province {
     text-align: left;
     font-size:35px;
   }
 }
-.weather-info{
+
+.weather-info {
   text-align: center;
   flex:1;
   min-height:0;
@@ -26,45 +30,49 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   .weather-compontent {
     .title {
-      font-size:50px;
+      font-size: 50px;
     }
+
     .address {
-      font-size:30px;
+      font-size: 30px;
     }
   }
   .weather-temp {
-    font-size:80px;
+    font-size: 80px;
     position: relative;
-    &::after{
+
+    &::after {
       position: absolute;
       content: "";
       right: -15px;
       top: 0 ;
-      width:15px;
-      height:15px;
-      border:5px solid @Black;
-      border-radius:50%;
+      width: 15px;
+      height: 15px;
+      border: 5px solid @Black;
+      border-radius: 50%;
     }
   }
 }
 
 .data-source {
-  font-size:20px;
+  font-size: 20px;
 }
 
+/* 深色模式 */
+@media ( prefers-color-scheme: dark ) {
 
-@media (prefers-color-scheme: dark) {
   .weather {
     color: @White;
   }
 
-  .weather-info{
+  .weather-info {
     .weather-temp {
       font-size:80px;
       position: relative;
-      &::after{
+      &::after {
         border-color: @White;
       }
     }
