@@ -5,9 +5,9 @@
 </template>
 <style lang="less">
 @import "./index.less";
-.weather-icon{
+.weather-icon {
   width: 300px;
-  height:300px;
+  height: 300px;
   position: relative;
   display: flex;
   align-items: center;
@@ -19,9 +19,9 @@ export default {
   name: 'WeatherIcon',
   props:{
     // sunny cloudy rainy rainbow starry stormy snowy
-    "type":{
-      type:String,
-      default: "sunny",
+    'type': {
+      type: String,
+      default: 'sunny',
       require: true
     }
   },
