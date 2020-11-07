@@ -34,7 +34,7 @@ export default {
 
   data () {
     return {
-      temp: '..',
+      temp: '~',
       source: '数据来源: 彩云天气',
       district: '获取定位中...',
       weather: '获取数据',
