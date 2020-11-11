@@ -1,15 +1,18 @@
 <template>
   <view class="content weather">
     <view class="header">
-      <view class="province" @tap="showAddressComponent">{{ city }}</view>
+      <view class="province" @tap="showAddressComponent" v-if="city">
+        <text class="_icon postion-icon"></text>{{ city }}</view>
     </view>
     <view class="weather-info">
+      <view class="weather-temp">{{temp}}</view>
       <view class="weather-compontent">
-        <view class="title">{{weather}}</view>
         <view class="address">{{district}}</view>
       </view>
+    </view>
+    <view class="weather-icon-component" v-if="city">
       <weather-icon :type='type'></weather-icon>
-      <view class="weather-temp">{{temp}}</view>
+      <view class="title">{{weather}}</view>
     </view>
     <view class="data-source">{{source}}</view>
     <address-component :visible.sync= "chooseAddressVisible" @choose= "chooseAddress"></address-component>
@@ -36,7 +39,7 @@ export default {
 
   data () {
     return {
-      temp: '~',
+      temp: '',
       source: '数据来源: 彩云天气',
       district: '获取定位中...',
       weather: '获取数据',

@@ -9,6 +9,7 @@
   color: @Black;
   padding: 15% 5% 5%;
   box-sizing: border-box;
+  position: relative;
 }
 
 .header{
@@ -18,28 +19,50 @@
 
   .province {
     text-align: left;
-    font-size:35px;
+    font-size: 35px;
+    display:flex;
+    align-items: center;
+    .postion-icon {
+      margin-right: 10px;
+      width: 35px;
+      height: 35px;
+      background-image: url("../../assets/imgs/postion-icon.png");
+    }
+  }
+}
+
+.weather-icon-component {
+  flex:1;
+  min-height:0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+
+  .title {
+    text-align: center;
   }
 }
 
 .weather-info {
   text-align: center;
-  flex:1;
+  position: absolute;
+  left: 80px;
+  top: 180px;
   min-height:0;
   display:flex;
+  justify-content: flex-end;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-width: 0;
 
   .weather-compontent {
-    .title {
-      font-size: 50px;
-    }
-
     .address {
       font-size: 30px;
     }
   }
+  
   .weather-temp {
     font-size: 80px;
     position: relative;
@@ -74,6 +97,13 @@
       position: relative;
       &::after {
         border-color: @White;
+      }
+    }
+  }
+  .header{
+    .province {
+      .postion-icon {
+        background-image: url("../../assets/imgs/postion-icon-black.png");
       }
     }
   }

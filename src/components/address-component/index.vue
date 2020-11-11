@@ -1,7 +1,7 @@
 <template>
   <view :class="['address-compontent',{ 'show': visible }]">
-    <view class="close-botton" @tap="close">关闭</view>
-    <view class="default-title">热门城市</view>
+    <view class="_icon close-botton" @tap="close"></view>
+    <view class="default-title"> <text class="_icon hot-city"></text>热门城市</view>
     <view class="default-address">
       <view v-for = "(ad, index) in address"
             :class="['default-address-item', {'active':ad.active}]"
@@ -9,7 +9,7 @@
             @tap = "choose(index,'hot')">{{ ad.city }}</view>
     </view>
     <view class="search-content" v-if="history.length > 0">
-      <view class="default-title">搜索过的历史</view>
+      <view class="default-title"><text class="_icon history-city"></text> 搜索过的历史</view>
       <view class="default-address history-address">
         <view v-for = "(ad, index) in history" class="history-item" :key="index">
             <text :class="['default-address-item', {'active': ad.active }]"
@@ -33,13 +33,9 @@
   border-top-right-radius: 30px;
   .close-botton {
     position: absolute;
-    padding: 5px 10px;
-    top:20px;
+    top: 20px;
     right: 20px;
-    border-radius: 10px;
-    font-size: 24px;
-    color: #333;
-    border: 1px solid #333;
+    background-image: url('../../assets/imgs/close-icon.png');
   }
   &.show {
     bottom: 0 ;
@@ -48,6 +44,18 @@
      font-size: 30px;
      color: #333;
      margin-bottom: 20px;
+     ._icon {
+        display:inline-block;
+        vertical-align: middle;
+        width: 30px;
+        height: 30px;
+        &.history-city {
+          background-image: url('../../assets/imgs/history-city.png');
+        }
+        &.hot-city {
+          background-image: url('../../assets/imgs/hot-city.png');
+        }
+     }
   }
   .default-address {
     display : flex;
@@ -83,6 +91,7 @@
 <script>
 import { getLocation , getLocationName , chooseLocation } from "@/api/index.ts";
 import { getHistory , setHistory } from "@/libs/location.ts";
+
 const defaultAddress = [
   { 'city': '北京', 'type': 'city', 'lonlat': '116.397827,39.90374' },
   { 'city': '上海', 'type': 'city', 'lonlat': '121.499763,31.23958' },
