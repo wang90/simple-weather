@@ -5,14 +5,14 @@
         <text class="_icon postion-icon"></text>{{ city }}</view>
     </view>
     <view class="weather-info">
+       <weather-icon :type='type'></weather-icon>
+    </view>
+    <view class="weather-icon-component" v-if="city">
       <view class="weather-temp">{{temp}}</view>
+      <view class="title">{{weather}}</view>
       <view class="weather-compontent">
         <view class="address">{{district}}</view>
       </view>
-    </view>
-    <view class="weather-icon-component" v-if="city">
-      <weather-icon :type='type'></weather-icon>
-      <view class="title">{{weather}}</view>
     </view>
     <view class="data-source">{{source}}</view>
     <address-component :visible.sync= "chooseAddressVisible" @choose= "chooseAddress"></address-component>

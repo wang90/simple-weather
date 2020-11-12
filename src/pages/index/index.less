@@ -31,26 +31,15 @@
   }
 }
 
-.weather-icon-component {
-  flex:1;
-  min-height:0;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  min-width: 0;
-
-  .title {
-    text-align: center;
-  }
-}
-
-.weather-info {
-  text-align: center;
+.weather-info  {
   position: absolute;
-  left: 80px;
-  top: 180px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+}
+.weather-icon-component  {
+  text-align: center;
   min-height:0;
   display:flex;
   justify-content: flex-end;
@@ -62,7 +51,7 @@
       font-size: 30px;
     }
   }
-  
+
   .weather-temp {
     font-size: 80px;
     position: relative;
