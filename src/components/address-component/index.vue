@@ -1,19 +1,23 @@
 <template>
   <view :class="['address-compontent',{ 'show': visible }]">
     <view class="_icon close-botton" @tap="close"></view>
-    <view class="default-title"> <text class="_icon hot-city"></text>热门城市</view>
+    <view class="default-title">
+      <text class="_icon hot-city"></text>
+      热门城市</view>
     <view class="default-address">
-      <view v-for = "(ad, index) in address"
-            :class="['default-address-item', {'active':ad.active}]"
+      <view v-for="(ad, index) in address"
             :key="index"
-            @tap = "choose(index,'hot')">{{ ad.city }}</view>
+            :class="['default-address-item', {'active':ad.active}]"
+            @tap="choose(index,'hot')">{{ ad.city }}</view>
     </view>
     <view class="search-content" v-if="history.length > 0">
-      <view class="default-title"><text class="_icon history-city"></text> 搜索过的历史</view>
+      <view class="default-title">
+        <text class="_icon history-city"></text>
+        搜索过的历史
+      </view>
       <view class="default-address history-address">
-        <view v-for = "(ad, index) in history" class="history-item" :key="index">
-            <text :class="['default-address-item', {'active': ad.active }]"
-              @tap = "choose(index,'history')">{{ ad.address }}</text>
+        <view class="history-item" v-for="(ad, index) in history"  :key="index">
+          <text :class="['default-address-item', {'active': ad.active }]" @tap="choose(index,'history')">{{ ad.address }}</text>
         </view>
       </view>
     </view>

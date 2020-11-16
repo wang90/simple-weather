@@ -15,6 +15,7 @@
 }
 </style>
 <script>
+
 export default {
   name: 'WeatherIcon',
   props:{
@@ -22,9 +23,8 @@ export default {
     'type': {
       type: String,
       default: 'sunny',
-      require: true
+      require: true,
     }
   },
-
 }
 </script>
