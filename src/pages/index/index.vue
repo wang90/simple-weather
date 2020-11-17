@@ -108,37 +108,6 @@ export default {
 
 
     /* 操作 */
-    chooseAddress( lonlat ) {
-      this.getWeather(`${ lonlat }` );
-      getLocationName( lonlat ).then( res => {
-        if ( res.status === "1" ) {
-          const regeocode = res.regeocode || {};
-          if ( regeocode ) {
-            const addressComponent = regeocode.addressComponent || {};
-            const province = addressComponent.province;
-            const district = addressComponent.district;
-            const city = addressComponent.city;
-            if ( typeof city === 'string' ) {
-              this.city = city;
-            } else if ( typeof city === 'object' && city instanceof Array && city.length > 0 ) {
-              this.city = city[0];
-            } else {
-              this.city = province || district;
-            }
-            this.district = district;
-            this.province = province;
-          } else {
-            this.district = '未知地域';
-            this.city = "未知地域"
-            this.province = '未知地域';
-          }
-        }
-      }).catch((err) => {
-          console.log(err);
-          this.district = '未知区域';
-          this.province = ''
-      })
-    },
 
     chooseAddress( lonlat ) {
       this.getWeather(`${ lonlat }` );
