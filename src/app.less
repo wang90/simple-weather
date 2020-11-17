@@ -1,12 +1,14 @@
 @import "./config.less";
+
 Page {
   width: 100%;
   height:100%;
   overflow-y: hidden;
 }
+
 .content {
   width: 100%;
-  height:100%;
+  height: 100%;
   background: @White;
   display: flex;
   flex-direction: column;
@@ -14,9 +16,16 @@ Page {
   align-items: center;
 }
 
-@media (prefers-color-scheme: dark ) {
+@media ( prefers-color-scheme: dark ) {
   .content {
     background: @Black;
   }
 }
 
+._icon {
+  width:  40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 100% 100% ;
+  background-position: center center;
+}

@@ -9,6 +9,7 @@
   color: @Black;
   padding: 15% 5% 5%;
   box-sizing: border-box;
+  position: relative;
 }
 
 .header{
@@ -18,28 +19,39 @@
 
   .province {
     text-align: left;
-    font-size:35px;
+    font-size: 35px;
+    display:flex;
+    align-items: center;
+    .postion-icon {
+      margin-right: 10px;
+      width: 35px;
+      height: 35px;
+      background-image: url("../../assets/imgs/postion-icon.png");
+    }
   }
 }
 
-.weather-info {
+.weather-info  {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+}
+.weather-icon-component  {
   text-align: center;
-  flex:1;
   min-height:0;
   display:flex;
+  justify-content: flex-end;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-width: 0;
 
   .weather-compontent {
-    .title {
-      font-size: 50px;
-    }
-
     .address {
       font-size: 30px;
     }
   }
+
   .weather-temp {
     font-size: 80px;
     position: relative;
@@ -61,21 +73,28 @@
   font-size: 20px;
 }
 
-/* 深色模式 */
-@media ( prefers-color-scheme: dark ) {
+// /* 深色模式 */
+// @media ( prefers-color-scheme: dark ) {
 
-  .weather {
-    color: @White;
-  }
+//   .weather {
+//     color: @White;
+//   }
 
-  .weather-info {
-    .weather-temp {
-      font-size:80px;
-      position: relative;
-      &::after {
-        border-color: @White;
-      }
-    }
-  }
-}
+//   .weather-info {
+//     .weather-temp {
+//       font-size:80px;
+//       position: relative;
+//       &::after {
+//         border-color: @White;
+//       }
+//     }
+//   }
+//   .header{
+//     .province {
+//       .postion-icon {
+//         background-image: url("../../assets/imgs/postion-icon-black.png");
+//       }
+//     }
+//   }
+// }
 
